@@ -1,0 +1,39 @@
+title: "STEP TEMPLATE"
+summary: A short summary of the step. Don't make it too long ;)
+description: |-
+  This is a Step template.
+  Contains everything what's required for a valid Stepman managed step.
+
+  A Step's description (and generally any `description` property)
+  can be a [Markdown](https://en.wikipedia.org/wiki/Markdown) formatted text.
+
+  To create your own Step:
+
+  1. Create a new repository on GitHub
+  2. Copy the files from this folder into your repository
+  3. That's all, you can use it on your own machine
+  4. Once you're happy with it you can share it with others.
+website: https://github.com/...
+source_code_url: https://github.com/...
+support_url: https://github.com/.../issues
+host_os_tags:
+  - osx-10.10
+project_type_tags:
+  - android
+type_tags:
+  - build
+  - utils
+run_if: .IsCI
+inputs:
+  - manifest_file: "$BITRISE_ANDROID_MANIFEST_PATH"
+    opts:
+      title: "AndroidManifest.xml file path"
+      summary: ""
+      description: |
+        Path to the given project's AndroidManifest.xml file.
+      is_required: true
+  - package_name: 
+    opts:
+      title: "Package Name"
+      summary: "Set the package attribute in the AndroidManifest.xml to a specified value"
+      is_required: true
